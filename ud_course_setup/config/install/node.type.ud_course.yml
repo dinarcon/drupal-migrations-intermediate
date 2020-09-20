@@ -1,0 +1,20 @@
+uuid: a22d1ee6-2200-4f7b-9bc2-4ce700cc7727
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+  enforced:
+    module:
+      - ud_course_setup
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Course
+type: ud_course
+description: 'Example content type for the <strong>Understand Drupal Migrations Course</strong>. <a href="https://understanddrupal.com/migrations" title="Understand Drupal Migrations Course">https://understanddrupal.com/migrations</a>'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

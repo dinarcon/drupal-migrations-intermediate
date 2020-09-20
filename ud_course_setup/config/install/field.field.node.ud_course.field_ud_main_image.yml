@@ -1,0 +1,31 @@
+uuid: 863e5917-fb6b-4916-9682-26365dee1799
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ud_main_image
+    - media.type.ud_media_main_image
+    - node.type.ud_course
+  enforced:
+    module:
+      - ud_course_setup
+id: node.ud_course.field_ud_main_image
+field_name: field_ud_main_image
+entity_type: node
+bundle: ud_course
+label: 'Main image'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ud_media_main_image: ud_media_main_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: 185b2053-a8e3-45c8-b7fa-59c5561316cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+  enforced:
+    module:
+      - ud_course_setup
+id: node.field_ud_attachments
+field_name: field_ud_attachments
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

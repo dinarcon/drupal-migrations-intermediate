@@ -1,0 +1,55 @@
+id: ud_course_json_media_main_image
+label: 'Import media main images from JSON'
+
+migration_tags:
+  - UD JSON Source
+  - UD Migrations Intermediate Example
+
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - modules/custom/ud_course/sources/ud_migrations_intermediate_data.json
+
+  item_selector: /data/ud_courses
+
+  fields:
+    - name: src_main_image_url
+      label: 'Main image URL'
+      selector: main_image/url
+    - name: src_main_image_alt
+      label: 'Main image alternative text'
+      selector: main_image/alt
+    - name: src_main_image_credit
+      label: 'Main image credit'
+      selector: main_image/credit
+
+  ids:
+    src_main_image_url:
+      type: string
+
+process:
+  name:
+    plugin: callback
+    source: src_main_image_url
+    callable: basename
+
+  field_ud_media_image/target_id:
+    plugin: migration_lookup
+    migration: ud_course_json_file_main_image
+    source: src_main_image_url
+    no_stub: true
+  field_ud_media_image/alt: src_main_image_alt
+
+  field_ud_media_credit: src_main_image_credit
+
+destination:
+  plugin: 'entity:media'
+  default_bundle: ud_media_main_image
+  validate: true
+
+migration_dependencies:
+  required:
+    - ud_course_json_file_main_image
+  optional: []

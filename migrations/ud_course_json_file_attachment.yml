@@ -1,0 +1,62 @@
+id: ud_course_json_file_attachment
+label: 'Import files from JSON'
+
+migration_tags:
+  - UD JSON Source
+  - UD Migrations Intermediate Example
+
+source:
+  constants:
+    DRUPAL_UD_COURSE_FILES_DIRECTORY: 'public://ud-course-files'
+    FILE_STATUS_PERMANENT: 1
+
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - modules/custom/ud_course/sources/ud_migrations_intermediate_data.json
+
+  item_selector: /data/ud_files
+
+  fields:
+    - name: src_file_id
+      label: 'File ID'
+      selector: file_id
+    - name: src_file_url
+      label: 'File URL'
+      selector: file_url
+
+  ids:
+    src_file_id:
+      type: string
+
+process:
+  psf_destination_filename:
+    - plugin: callback
+      source: src_file_url
+      callable: basename
+    - plugin: transliteration
+    - plugin: skip_on_empty
+      method: row
+      message: 'Cannot import missing file URL.'
+  psf_destination_full_path:
+    plugin: concat
+    source:
+      - constants/DRUPAL_UD_COURSE_FILES_DIRECTORY
+      - '@psf_destination_filename'
+    delimiter: /
+
+  uri:
+    plugin: download
+    source:
+      - src_file_url
+      - '@psf_destination_full_path'
+    file_exists: 'rename'
+
+  status: constants/FILE_STATUS_PERMANENT
+
+destination:
+  plugin: 'entity:file'
+  validate: true
+
+migration_dependencies: null

@@ -1,0 +1,23 @@
+uuid: b112d0cf-821e-4ad8-91e8-bcc1a2292546
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+  enforced:
+    module:
+      - ud_course_setup
+id: node.field_ud_main_image
+field_name: field_ud_main_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

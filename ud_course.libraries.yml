@@ -1,0 +1,4 @@
+ud_course_overrides:
+  css:
+    component:
+      css/ud_course.css: {}

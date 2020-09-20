@@ -1,0 +1,30 @@
+uuid: 8fc27e29-054d-43db-9e01-389f7f8e64c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.ud_media_attachment.field_ud_media_attachment
+    - media.type.ud_media_attachment
+  module:
+    - file
+  enforced:
+    module:
+      - ud_course_setup
+id: media.ud_media_attachment.default
+targetEntityType: media
+bundle: ud_media_attachment
+mode: default
+content:
+  field_ud_media_attachment:
+    label: visually_hidden
+    weight: 0
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

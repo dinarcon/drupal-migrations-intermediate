@@ -1,0 +1,17 @@
+uuid: 5d497a73-463d-452f-830e-0e0f10bd548d
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ud_course_setup
+id: node__ud_course
+label: 'Content: Course'
+tags:
+  og_image_url: '[node:field_ud_main_image:entity:field_ud_media_image:entity:url]'
+  og_url: '[node:url]'
+  og_site_name: '[site:name]'
+  og_title: '[node:title]'
+  twitter_cards_image: '[node:field_ud_main_image:entity:field_ud_media_image:entity:url]'
+  twitter_cards_type: summary_large_image
+  twitter_cards_title: '[node:title]'

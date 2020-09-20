@@ -1,0 +1,41 @@
+uuid: c05eb2f7-0a99-4e8b-8d2e-b7e878fcc623
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_ud_media_image
+    - media.type.ud_media_main_image
+  module:
+    - image
+  enforced:
+    module:
+      - ud_course_setup
+id: media.ud_media_main_image.field_ud_media_image
+field_name: field_ud_media_image
+entity_type: media
+bundle: ud_media_main_image
+label: Image
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: ud-course-files
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

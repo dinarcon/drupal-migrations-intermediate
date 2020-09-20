@@ -1,0 +1,24 @@
+uuid: 4f9e3ef3-03a9-4d2f-8970-6d2521aef691
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - ud_course_setup
+id: media.field_ud_media_credit
+field_name: field_ud_media_credit
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

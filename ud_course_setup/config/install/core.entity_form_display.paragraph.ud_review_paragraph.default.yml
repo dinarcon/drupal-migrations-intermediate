@@ -1,0 +1,50 @@
+uuid: 55539902-9f1d-4a30-8767-6ca1b0621ee9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ud_review_paragraph.field_ud_review_comment
+    - field.field.paragraph.ud_review_paragraph.field_ud_review_evaluations
+    - field.field.paragraph.ud_review_paragraph.field_ud_review_name
+    - paragraphs.paragraphs_type.ud_review_paragraph
+  module:
+    - paragraphs
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.ud_review_paragraph.default
+targetEntityType: paragraph
+bundle: ud_review_paragraph
+mode: default
+content:
+  field_ud_review_comment:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ud_review_evaluations:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_ud_review_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

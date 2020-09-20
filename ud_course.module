@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Attaches library with CSS styles.
+ */
+
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function ud_course_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'ud_courses_view')) {
+    $view->element['#attached']['library'][] = 'ud_course/ud_course_overrides';
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function ud_course_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->getType() === 'ud_course') {
+    $build['#attached']['library'][] = 'ud_course/ud_course_overrides';
+  }
+}

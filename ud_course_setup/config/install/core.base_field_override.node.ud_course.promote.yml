@@ -1,0 +1,25 @@
+uuid: 04770724-e073-45df-a082-5498e59518e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ud_course
+  enforced:
+    module:
+      - ud_course_setup
+id: node.ud_course.promote
+field_name: promote
+entity_type: node
+bundle: ud_course
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,62 @@
+uuid: 5b065081-613b-43df-b8c4-833242d14670
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ud_course.field_ud_attachments
+    - field.field.node.ud_course.field_ud_main_image
+    - field.field.node.ud_course.field_ud_meta_tags
+    - field.field.node.ud_course.field_ud_reviews
+    - node.type.ud_course
+  module:
+    - entity_reference_revisions
+    - ud_course_setup
+    - user
+  enforced:
+    module:
+      - ud_course_setup
+id: node.ud_course.default
+targetEntityType: node
+bundle: ud_course
+mode: default
+content:
+  field_ud_attachments:
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_ud_main_image:
+    weight: 102
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_ud_meta_tags:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: ud_metatag_debug_formatter
+    region: content
+  field_ud_reviews:
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

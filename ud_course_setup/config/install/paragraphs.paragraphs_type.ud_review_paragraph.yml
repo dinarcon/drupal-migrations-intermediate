@@ -1,0 +1,13 @@
+uuid: 96faeda6-89f4-4964-86a0-4db667686402
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ud_course_setup
+id: ud_review_paragraph
+label: Review
+icon_uuid: null
+icon_default: null
+description: 'Example paragraph type for the <strong>Understand Drupal Migrations Course</strong>. <a href="https://understanddrupal.com/migrations" title="Understand Drupal Migrations Course">https://understanddrupal.com/migrations</a>'
+behavior_plugins: {  }

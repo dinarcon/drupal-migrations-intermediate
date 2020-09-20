@@ -1,0 +1,26 @@
+uuid: 2f114149-8f9f-4996-8631-58056a0071f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ud_evaluation_content
+    - paragraphs.paragraphs_type.ud_evaluation_paragraph
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.ud_evaluation_paragraph.field_ud_evaluation_content
+field_name: field_ud_evaluation_content
+entity_type: paragraph
+bundle: ud_evaluation_paragraph
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {}
+default_value_callback: ''
+settings:
+  min: 1
+  max: 10
+  prefix: ''
+  suffix: ''
+field_type: integer

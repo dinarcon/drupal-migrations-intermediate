@@ -1,0 +1,53 @@
+id: ud_course_json_media_attachment
+label: 'Import media attachments from JSON'
+
+migration_tags:
+  - UD JSON Source
+  - UD Migrations Intermediate Example
+
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - modules/custom/ud_course/sources/ud_migrations_intermediate_data.json
+
+  item_selector: /data/ud_files
+
+  fields:
+    - name: src_file_id
+      label: 'File ID'
+      selector: file_id
+    - name: src_file_url
+      label: 'File URL'
+      selector: file_url
+    - name: src_file_description
+      label: 'File Description'
+      selector: file_description
+
+  ids:
+    src_file_id:
+      type: string
+
+process:
+  name:
+    plugin: callback
+    source: src_file_url
+    callable: basename
+
+  field_ud_media_attachment/target_id:
+    plugin: migration_lookup
+    migration: ud_course_json_file_attachment
+    source: src_file_id
+    no_stub: true
+  field_ud_media_attachment/description: src_file_description
+
+destination:
+  plugin: 'entity:media'
+  default_bundle: ud_media_attachment
+  validate: true
+
+migration_dependencies:
+  required:
+    - ud_course_json_file_attachment
+  optional: []

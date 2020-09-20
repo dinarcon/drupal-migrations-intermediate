@@ -1,0 +1,17 @@
+uuid: b2ff029a-a306-487a-a6a3-7a1f9cc682f2
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ud_course_setup
+id: ud_media_main_image
+label: 'Main image'
+description: 'Example media type for the <strong>Understand Drupal Migrations Course</strong>. <a href="https://understanddrupal.com/migrations" title="Understand Drupal Migrations Course">https://understanddrupal.com/migrations</a>'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_ud_media_image
+field_map:
+  name: name

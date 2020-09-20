@@ -1,0 +1,33 @@
+uuid: 96ef7d27-2b0e-46e7-bcee-9c60160881e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - media
+  enforced:
+    module:
+      - ud_course_setup
+id: media.field_ud_media_image
+field_name: field_ud_media_image
+entity_type: media
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

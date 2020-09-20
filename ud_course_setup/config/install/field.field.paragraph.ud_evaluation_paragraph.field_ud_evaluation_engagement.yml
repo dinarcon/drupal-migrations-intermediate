@@ -1,0 +1,26 @@
+uuid: 1aec0920-cdc4-499e-88e1-259e212cf7d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ud_evaluation_engagement
+    - paragraphs.paragraphs_type.ud_evaluation_paragraph
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.ud_evaluation_paragraph.field_ud_evaluation_engagement
+field_name: field_ud_evaluation_engagement
+entity_type: paragraph
+bundle: ud_evaluation_paragraph
+label: Engagement
+description: ''
+required: false
+translatable: false
+default_value: {}
+default_value_callback: ''
+settings:
+  min: 1
+  max: 10
+  prefix: ''
+  suffix: ''
+field_type: integer

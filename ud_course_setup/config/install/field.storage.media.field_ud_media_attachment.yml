@@ -1,0 +1,26 @@
+uuid: 407f5b8a-0038-40f2-a31c-31a1885cadb9
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - media
+  enforced:
+    module:
+      - ud_course_setup
+id: media.field_ud_media_attachment
+field_name: field_ud_media_attachment
+entity_type: media
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

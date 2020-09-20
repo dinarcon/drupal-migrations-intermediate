@@ -1,0 +1,20 @@
+/**
+ * @file
+ * Styles for view and node pages.
+ */
+
+.views-field-field-ud-reviews .paragraph--type--ud-review-paragraph:not(:last-child),
+.field--name-field-ud-reviews .field__item:not(:last-child) .paragraph--type--ud-review-paragraph {
+  border-bottom: 1px dotted #009cde;
+}
+
+/* Overrides Olivero's margin-bottom style for the .field class. */
+[dir] .paragraph--type--ud-review-paragraph .field:not(:last-child) {
+  margin-bottom: 0;
+}
+
+/* Overrides Olivero's font-weight style for the .field__label class. */
+.paragraph--type--ud-review-paragraph .field__label {
+  font-style: italic;
+  font-weight: normal;
+}

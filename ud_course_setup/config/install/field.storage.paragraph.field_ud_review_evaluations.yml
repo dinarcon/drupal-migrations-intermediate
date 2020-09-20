@@ -1,0 +1,23 @@
+uuid: 34ac9429-5ecf-4a47-a253-5ea80cbffc8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.field_ud_review_evaluations
+field_name: field_ud_review_evaluations
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

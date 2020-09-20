@@ -1,0 +1,161 @@
+{
+  "course": {
+    "homepage": "https://understanddrupal.com/migrations",
+    "repository": "https://github.com/dinarcon/drupal_migrations_intermediate"
+  },
+  "author": {
+    "name": "Mauricio Dinarte",
+    "online_profiles": {
+      "drupal": "https://www.drupal.org/u/dinarcon",
+      "gitlab": "https://gitlab.com/dinarcon",
+      "github": "https://github.com/dinarcon",
+      "twitter": "https://twitter.com/dinarcon"
+    }
+  },
+  "data": {
+    "ud_courses": [
+      {
+        "course_id": 1,
+        "name": "DRUPAL MIGRATIONS",
+        "url_alias": "ud-courses/migrations",
+        "main_image": {
+          "url": "https://udrupal.com/files/sample/migrations.png",
+          "alt": "Banner for Drupal Migrations course",
+          "credit": "Benjamin"
+        },
+        "file_attachments": ["F01"],
+        "reviews": ["R10"],
+        "metatags": {
+          "general": {
+            "description": "Learn Drupal migrations efficiently with practical examples.",
+            "robots": ["index", "nofollow"],
+            "shortlink": "https://udrupal.com/migrations",
+            "unknown_tag": "to be removed"
+          },
+          "twitter": {
+            "creator": "@dinarcon",
+            "site": "@udrupalcom"
+          }
+        },
+        "topics": ["migrations", "ETL", "source plugins", "process plugins", "destination plugins"]
+      },
+      {
+        "course_id": 2,
+        "name": "DRUPAL UPGRADES",
+        "url_alias": "ud-courses/upgrades",
+        "main_image": {
+          "url": "https://udrupal.com/files/sample/upgrades.png",
+          "alt": "Banner for Drupal Upgrades course",
+          "credit": "Micky"
+        },
+        "file_attachments": [],
+        "reviews": ["R20"],
+        "metatags": {
+          "general": {
+            "description": "Future-proof your Drupal website by upgrading to the latest version.",
+            "robots": ["index", "nofollow"],
+            "shortlink": "https://udrupal.com/upgrades",
+            "unknown_tag": "to be removed"
+          },
+          "twitter": {
+            "creator": "@dinarcon",
+            "site": "@udrupalcom"
+          }
+        },
+        "topics": ["migrations", "upgrades", "ETL", "Drupal 7", "Drupal 9"]
+      },
+      {
+        "course_id": 3,
+        "name": "REACT.JS FUNDAMENTALS",
+        "url_alias": "ud-courses/reactjs",
+        "main_image": {
+          "url": "https://udrupal.com/files/sample/react.png",
+          "alt": "Banner for React.js course",
+          "credit": "Stefan"
+        },
+        "file_attachments": ["F02", "F03"],
+        "reviews": ["R30", "R40"],
+        "metatags": {
+          "general": {
+            "description": "Learn the React.js fundamentals by converting a static page into a dynamic application.",
+            "robots": ["index", "nofollow"],
+            "shortlink": "https://udrupal.com/reactjs",
+            "unknown_tag": "to be removed"
+          },
+          "twitter": {
+            "creator": "@dinarcon",
+            "site": "@udrupalcom"
+          }
+        },
+        "topics": ["react.js", "element", "component", "props", "proptypes", "state", "hooks", "context", "routing", "forms"]
+      }
+    ],
+    "ud_files": [
+      {
+        "file_id": "F01",
+        "file_url": "https://udrupal.com/files/sample/31-days-of-migrations.pdf",
+        "file_description": "31 days of migrations book"
+      },
+      {
+        "file_id": "F02",
+        "file_url": "https://udrupal.com/files/sample/react-resources.docx",
+        "file_description": "React.js resources"
+      },
+      {
+        "file_id": "F03",
+        "file_url": "https://udrupal.com/files/sample/react-hooks-summary.odt",
+        "file_description": "React.js hooks summary"
+      }
+    ],
+    "ud_review_paragraphs": [
+      {
+        "review_id": "R10",
+        "review_details": {
+          "name": "Lucas",
+          "comment": "Super valuable!",
+          "evaluations": {
+            "content": 9,
+            "pace": 7,
+            "engagement": 8
+          }
+        }
+      },
+      {
+        "review_id": "R20",
+        "review_details": {
+          "name": "Wendy",
+          "comment": "Very thorough.",
+          "evaluations": {
+            "content": 10,
+            "pace": 9,
+            "engagement": 7
+          }
+        }
+      },
+      {
+        "review_id": "R30",
+        "review_details": {
+          "name": "Mary",
+          "comment": "Useful examples.",
+          "evaluations": {
+            "content": 8,
+            "pace": 5,
+            "engagement": 7
+          }
+        }
+      },
+      {
+        "review_id": "R40",
+        "review_details": {
+          "name": "Felix",
+          "comment": "Just what I needed!",
+          "evaluations": {
+            "content": 8,
+            "pace": 7,
+            "engagement": 10
+          }
+        }
+      }
+    ]
+  }
+}

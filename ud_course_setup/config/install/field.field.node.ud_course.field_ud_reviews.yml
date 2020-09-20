@@ -1,0 +1,40 @@
+uuid: c0a9b05e-9674-4c88-a785-e2a29c46f291
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ud_reviews
+    - node.type.ud_course
+    - paragraphs.paragraphs_type.ud_review_paragraph
+  module:
+    - entity_reference_revisions
+  enforced:
+    module:
+      - ud_course_setup
+id: node.ud_course.field_ud_reviews
+field_name: field_ud_reviews
+entity_type: node
+bundle: ud_course
+label: Reviews
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ud_review_paragraph: ud_review_paragraph
+    target_bundles_drag_drop:
+      ud_book_paragraph:
+        weight: 4
+        enabled: false
+      ud_evaluation:
+        weight: 5
+        enabled: false
+      ud_review_paragraph:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

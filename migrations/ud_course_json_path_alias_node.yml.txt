@@ -1,0 +1,67 @@
+id: ud_course_json_path_alias_node
+label: 'Import node path aliases from JSON'
+
+migration_tags:
+  - UD JSON Source
+  - UD Migrations Intermediate Example
+
+source:
+  constants:
+    SLASH: '/'
+    NODE_CANONICAL_PATH_PREFIX: '/node/'
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - modules/custom/ud_course/sources/ud_migrations_intermediate_data.json
+
+  item_selector: /data/ud_courses
+
+  fields:
+    - name: src_course_id
+      label: 'Course ID'
+      selector: course_id
+    - name: src_url_alias
+      label: 'URL alias'
+      selector: url_alias
+
+  ids:
+    src_course_id:
+      type: integer
+
+process:
+# id: some__id
+# revision_id: some__revision_id
+# uuid: some__uuid
+# status: some__status
+
+  langcode:
+    plugin: default_value
+    default_value: 'en'
+
+  psf_nid:
+    plugin: migration_lookup
+    migration: ud_course_json_node
+    source: src_course_id
+    no_stub: true
+
+  path:
+    plugin: concat
+    source:
+      - constants/NODE_CANONICAL_PATH_PREFIX
+      - '@psf_nid'
+
+  alias:
+    plugin: concat
+    source:
+      - constants/SLASH
+      - src_url_alias
+
+destination:
+  plugin: 'entity:path_alias'
+  validate: true
+
+migration_dependencies:
+  required:
+    - ud_course_json_node
+  optional: []

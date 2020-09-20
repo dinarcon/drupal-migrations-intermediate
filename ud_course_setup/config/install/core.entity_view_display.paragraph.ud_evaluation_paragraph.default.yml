@@ -1,0 +1,45 @@
+uuid: c590e422-5b0f-4f54-9901-f18d26e3c757
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ud_evaluation_paragraph.field_ud_evaluation_content
+    - field.field.paragraph.ud_evaluation_paragraph.field_ud_evaluation_engagement
+    - field.field.paragraph.ud_evaluation_paragraph.field_ud_evaluation_pace
+    - paragraphs.paragraphs_type.ud_evaluation_paragraph
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.ud_evaluation_paragraph.default
+targetEntityType: paragraph
+bundle: ud_evaluation_paragraph
+mode: default
+content:
+  field_ud_evaluation_content:
+    weight: 0
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_ud_evaluation_engagement:
+    weight: 1
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_ud_evaluation_pace:
+    weight: 2
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden: {  }

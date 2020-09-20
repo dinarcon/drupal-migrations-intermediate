@@ -1,0 +1,26 @@
+uuid: fc1032d4-60f6-409f-a759-218aae331a26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ud_evaluation_pace
+    - paragraphs.paragraphs_type.ud_evaluation_paragraph
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.ud_evaluation_paragraph.field_ud_evaluation_pace
+field_name: field_ud_evaluation_pace
+entity_type: paragraph
+bundle: ud_evaluation_paragraph
+label: Pace
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: 10
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,19 @@
+name: UD Course Example Migration Setup
+type: module
+description: Example configuration for the Understand Drupal Migrations Course. https://understanddrupal.com/migrations
+package: UnderstandDrupal.com
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:field
+  - drupal:file
+  - drupal:image
+  - drupal:media
+  - drupal:media_library
+  - drupal:views
+  - entity_reference_revisions:entity_reference_revisions
+  - metatag:metatag
+  - metatag:metatag_open_graph
+  - metatag:metatag_twitter_cards
+  - paragraphs:paragraphs
+  - token:token

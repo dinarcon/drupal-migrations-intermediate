@@ -1,0 +1,31 @@
+uuid: b8cc3fa9-f472-4a35-b2f0-96372f803738
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ud_course.field_ud_attachments
+    - field.field.node.ud_course.field_ud_main_image
+    - field.field.node.ud_course.field_ud_meta_tags
+    - field.field.node.ud_course.field_ud_reviews
+    - node.type.ud_course
+  module:
+    - user
+  enforced:
+    module:
+      - ud_course_setup
+id: node.ud_course.teaser
+targetEntityType: node
+bundle: ud_course
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_ud_attachments: true
+  field_ud_main_image: true
+  field_ud_meta_tags: true
+  field_ud_reviews: true

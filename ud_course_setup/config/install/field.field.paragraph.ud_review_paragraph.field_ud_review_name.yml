@@ -1,0 +1,22 @@
+uuid: ecbc7ad7-b750-4a48-b6f7-258eeaabc769
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ud_review_name
+    - paragraphs.paragraphs_type.ud_review_paragraph
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.ud_review_paragraph.field_ud_review_name
+field_name: field_ud_review_name
+entity_type: paragraph
+bundle: ud_review_paragraph
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,17 @@
+uuid: 91d3d381-53d1-43cd-a04a-5d6f6e8088d1
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ud_course_setup
+id: ud_media_attachment
+label: Attachment
+description: 'Example media type for the <strong>Understand Drupal Migrations Course</strong>. <a href="https://understanddrupal.com/migrations" title="Understand Drupal Migrations Course">https://understanddrupal.com/migrations</a>'
+source: file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_ud_media_attachment
+field_map:
+  name: name

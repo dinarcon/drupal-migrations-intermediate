@@ -1,0 +1,23 @@
+uuid: b1d6a2ae-e4e1-4573-bed0-f8e1688538f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.ud_media_attachment.field_ud_media_attachment
+    - media.type.ud_media_attachment
+  enforced:
+    module:
+      - ud_course_setup
+id: media.ud_media_attachment.media_library
+targetEntityType: media
+bundle: ud_media_attachment
+mode: media_library
+content: {  }
+hidden:
+  created: true
+  field_ud_media_attachment: true
+  name: true
+  path: true
+  status: true
+  uid: true

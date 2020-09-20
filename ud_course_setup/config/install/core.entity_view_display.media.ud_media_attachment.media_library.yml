@@ -1,0 +1,33 @@
+uuid: ec21fba3-42ba-4d61-8b80-5959745a2ab0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.ud_media_attachment.field_ud_media_attachment
+    - image.style.medium
+    - media.type.ud_media_attachment
+  module:
+    - image
+  enforced:
+    module:
+      - ud_course_setup
+id: media.ud_media_attachment.media_library
+targetEntityType: media
+bundle: ud_media_attachment
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_ud_media_attachment: true
+  name: true
+  uid: true

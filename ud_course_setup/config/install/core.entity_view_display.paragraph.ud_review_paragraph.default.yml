@@ -1,0 +1,45 @@
+uuid: 193761f9-87d7-4b1d-ae1a-57755df0a02d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ud_review_paragraph.field_ud_review_comment
+    - field.field.paragraph.ud_review_paragraph.field_ud_review_evaluations
+    - field.field.paragraph.ud_review_paragraph.field_ud_review_name
+    - paragraphs.paragraphs_type.ud_review_paragraph
+  module:
+    - entity_reference_revisions
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.ud_review_paragraph.default
+targetEntityType: paragraph
+bundle: ud_review_paragraph
+mode: default
+content:
+  field_ud_review_comment:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ud_review_evaluations:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_ud_review_name:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

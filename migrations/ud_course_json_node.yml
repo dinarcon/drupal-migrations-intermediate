@@ -1,0 +1,130 @@
+id: ud_course_json_node
+label: 'Import media attachments from JSON'
+
+migration_tags:
+  - UD JSON Source
+  - UD Migrations Intermediate Example
+
+source:
+  constants:
+    SLASH: '/'
+    TITLE_SUFFIX: ' course'
+
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - modules/custom/ud_course/sources/ud_migrations_intermediate_data.json
+
+  item_selector: /data/ud_courses
+
+  fields:
+    - name: src_course_id
+      label: 'Course ID'
+      selector: course_id
+    - name: src_name
+      label: 'Name'
+      selector: name
+    - name: src_url_alias
+      label: 'URL alias'
+      selector: url_alias
+    - name: src_main_image_url
+      label: 'Main image URL'
+      selector: main_image/url
+    - name: src_file_attachments
+      label: 'File Attachments'
+      selector: file_attachments
+    - name: src_reviews
+      label: 'Reviews'
+      selector: reviews
+    - name: src_metatags
+      label: 'Metatags'
+      selector: metatags
+    - name: src_topics
+      label: 'Topics'
+      selector: topics
+
+  ids:
+    src_course_id:
+      type: integer
+
+process:
+  title:
+    - plugin: concat
+      source:
+        - src_name
+        - constants/TITLE_SUFFIX
+    - plugin: callback
+      callable: mb_strtolower
+    - plugin: callback
+      callable: ucwords
+
+# path/pid: some__path_id
+# path/langcode: some__path_langcode
+  path/alias:
+    plugin: concat
+    source:
+      - constants/SLASH
+      - src_url_alias
+# If pathauto module is enabled and a pattern exists for this content type,
+# the 'path/pathauto' subfield needs to be set to 0. Otherwise, a URL alias
+# following the pattern will be created instead of the one we are mapping.
+# path/pathauto:
+#   plugin: default_value
+#   default_value: 0
+
+  field_ud_main_image:
+    plugin: migration_lookup
+    migration: ud_course_json_media_main_image
+    source: src_main_image_url
+    no_stub: true
+
+  field_ud_attachments:
+    plugin: migration_lookup
+    migration: ud_course_json_media_attachment
+    source: src_file_attachments
+    no_stub: true
+
+  pseudo_ud_review_paragraph:
+    plugin: migration_lookup
+    migration: ud_course_json_paragraph_review
+    source: src_reviews
+    no_stub: true
+
+  field_ud_reviews:
+    plugin: sub_process
+    source: '@pseudo_ud_review_paragraph'
+    process:
+      target_id: '0'
+      target_revision_id: '1'
+
+#  pseudo_metatags: src_metatags/general
+#  pseudo_metatags/robots:
+#      - plugin: concat
+#        source: src_metatags/general/robots
+#        delimiter: ', '
+#
+#  field_ud_meta_tags:
+#    - plugin: single_value
+#      source: '@pseudo_metatags'
+#    - plugin: callback
+#      callable: serialize
+
+  field_ud_meta_tags:
+    plugin: ud_metatags
+    source: src_metatags
+    article_section: 'Video Courses'
+    article_tag: src_topics
+    remove_unknown_tags: true
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: ud_course
+  validate: true
+
+migration_dependencies:
+  required:
+    - ud_course_json_media_attachment
+    - ud_course_json_media_main_image
+    - ud_course_json_paragraph_review
+  optional: []

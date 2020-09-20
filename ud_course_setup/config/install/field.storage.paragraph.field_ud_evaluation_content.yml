@@ -1,0 +1,23 @@
+uuid: 56baf647-b563-455c-b3f2-38cc9bd74428
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.field_ud_evaluation_content
+field_name: field_ud_evaluation_content
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

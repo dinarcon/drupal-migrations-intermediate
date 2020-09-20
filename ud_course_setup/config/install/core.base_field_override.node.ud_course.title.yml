@@ -1,0 +1,21 @@
+uuid: 6d5e35b0-8774-444a-83f0-af14a9ffea24
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ud_course
+  enforced:
+    module:
+      - ud_course_setup
+id: node.ud_course.title
+field_name: title
+entity_type: node
+bundle: ud_course
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,45 @@
+id: ud_course_json_paragraph_evaluation
+label: 'Import evaluation paragraphs from JSON'
+
+migration_tags:
+  - UD JSON Source
+  - UD Migrations Intermediate Example
+
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - modules/custom/ud_course/sources/ud_migrations_intermediate_data.json
+
+  item_selector: /data/ud_review_paragraphs
+
+  fields:
+    - name: src_review_id
+      label: 'Review ID'
+      selector: review_id
+    - name: src_evaluation_content
+      label: 'Content'
+      selector: review_details/evaluations/content
+    - name: src_evaluation_pace
+      label: 'Pace'
+      selector: review_details/evaluations/pace
+    - name: src_evaluation_engagement
+      label: 'Engagement'
+      selector: review_details/evaluations/engagement
+
+  ids:
+    src_review_id:
+      type: string
+
+process:
+  field_ud_evaluation_content: src_evaluation_content
+  field_ud_evaluation_pace: src_evaluation_pace
+  field_ud_evaluation_engagement: src_evaluation_engagement
+
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: ud_evaluation_paragraph
+  validate: true
+
+migration_dependencies: null

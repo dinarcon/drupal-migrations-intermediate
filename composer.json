@@ -1,0 +1,31 @@
+{
+  "name": "drupal/ud_course",
+  "description": "Example for the Understand Drupal Migrations Course.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://understanddrupal.com/migrations",
+  "authors": [
+    {
+        "name": "Mauricio Dinarte",
+        "homepage":"https://www.drupal.org/u/dinarcon",
+        "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "source": "https://github.com/dinarcon/drupal-migrations-intermediate",
+    "issues": "https://github.com/dinarcon/drupal-migrations-intermediate/issues"
+  },
+  "require": {
+    "drupal/core": "^8 | ^9",
+    "drupal/metatag": "^1.14",
+    "drupal/migrate_plus": "^5.1",
+    "drupal/migrate_tools": "^5.0",
+    "drupal/paragraphs": "^1.12"
+  },
+  "suggest": {
+    "drupal/devel": "Get a list of available container services with devel-services command.",
+    "drupal/pathauto": "Provide patterns for path aliases.",
+    "drush/drush": "Execute commands provided by migrate_tools."
+  },
+  "minimum-stability": "dev"
+}

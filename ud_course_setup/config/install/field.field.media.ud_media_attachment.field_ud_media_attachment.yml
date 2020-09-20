@@ -1,0 +1,30 @@
+uuid: 60a76cbe-bd30-4773-8659-46629db5e43b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_ud_media_attachment
+    - media.type.ud_media_attachment
+  module:
+    - file
+  enforced:
+    module:
+      - ud_course_setup
+id: media.ud_media_attachment.field_ud_media_attachment
+field_name: field_ud_media_attachment
+entity_type: media
+bundle: ud_media_attachment
+label: Attachment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: ud-course-files
+  file_extensions: 'txt rtf doc docx ppt pptx xls xlsx pdf odf odg odp ods odt fodt fods fodp fodg key numbers pages png gif jpg jpeg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

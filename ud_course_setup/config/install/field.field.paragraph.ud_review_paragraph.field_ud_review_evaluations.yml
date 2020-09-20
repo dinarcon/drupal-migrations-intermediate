@@ -1,0 +1,37 @@
+uuid: b2064713-6eab-4550-ae14-e6d00291cf6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ud_review_evaluations
+    - paragraphs.paragraphs_type.ud_evaluation_paragraph
+    - paragraphs.paragraphs_type.ud_review_paragraph
+  module:
+    - entity_reference_revisions
+  enforced:
+    module:
+      - ud_course_setup
+id: paragraph.ud_review_paragraph.field_ud_review_evaluations
+field_name: field_ud_review_evaluations
+entity_type: paragraph
+bundle: ud_review_paragraph
+label: Evaluations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ud_evaluation_paragraph: ud_evaluation_paragraph
+    target_bundles_drag_drop:
+      ud_evaluation_paragraph:
+        enabled: true
+        weight: 3
+      ud_review_paragraph:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions
