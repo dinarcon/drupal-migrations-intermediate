@@ -42,4 +42,6 @@ destination:
   default_bundle: ud_evaluation_paragraph
   validate: true
 
-migration_dependencies: null
+migration_dependencies:
+  required: { }
+  optional: { }

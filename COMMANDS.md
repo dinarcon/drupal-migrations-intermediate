@@ -3,11 +3,11 @@
 This is a list of some commands used throughout the course.
 
 ```
-COMPOSER_MEMORY_LIMIT=-1 composer create-project drupal/recommended-project:^9.0.0 migrations-intermediate
+COMPOSER_MEMORY_LIMIT=-1 composer create-project drupal/recommended-project:^9.1 migrations-intermediate
 
 cd migrations-intermediate
 
-COMPOSER_MEMORY_LIMIT=-1 composer require 'drupal/olivero:^1.0' 'drush/drush' 'drupal/migrate_plus:^5.1' 'drupal/migrate_tools:^5.0' 'drupal/paragraphs:^1.12' 'drupal/entity_reference_revisions:^1.8' 'drupal/metatag:^1.14' 'drupal/token:^1.7' 'drupal/devel:^4.0' 'drupal/pathauto:^1.8' 'cweagans/composer-patches'
+COMPOSER_MEMORY_LIMIT=-1 composer require 'drush/drush:^10.3.0' 'drupal/migrate_plus:^5.1' 'drupal/migrate_tools:^5.0' 'drupal/paragraphs:^1.12' 'drupal/entity_reference_revisions:^1.9' 'drupal/metatag:^1.15' 'drupal/token:^1.9' 'drupal/devel:^4.1' 'drupal/pathauto:^1.8' 'cweagans/composer-patches:^1.7'
 
 vim composer.json
 
@@ -23,11 +23,11 @@ cd web/modules/custom && git clone https://github.com/dinarcon/drupal-migrations
 
 php web/core/scripts/drupal quick-start standard --site-name "UnderstandDrupal.com/migrations" --suppress-login
 
-./vendor/bin/drush theme-enable olivero && drush --yes config:set olivero.settings debug 0 && drush --yes config:set system.theme default olivero
+./vendor/bin/drush theme:enable claro && ./vendor/bin/drush --yes config:set system.theme admin claro
 
-./vendor/bin/drush theme-enable claro && drush --yes config:set system.theme admin claro
+./vendor/bin/drush theme:enable olivero && ./vendor/bin/drush --yes config:set system.theme default olivero
 
-./vendor/bin/drush pm-enable --yes ud_course devel pathauto
+./vendor/bin/drush pm:enable --yes ud_course devel pathauto
 
 # Import all migrations.
 ./vendor/bin/drush migrate:import --tag='UD Migrations Intermediate Example'

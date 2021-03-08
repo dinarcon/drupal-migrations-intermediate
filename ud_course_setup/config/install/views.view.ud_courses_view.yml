@@ -574,7 +574,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<p>Import all migrations using the following Drush command:</p>\r\n<p><code>./vendor/bin/drush migrate:import --tag='UD Migrations Intermediate Example'</code></p>"
+            value: "<p>The example module has been installed correctly, but the migrations have not been executed. Run the following Drush command to get the content imported:</p>\r\n<p><code>./vendor/bin/drush migrate:import --tag='UD Migrations Intermediate Example'</code></p>\r\n<p>If the import operation fails, make sure that path to the JSON file is properly configured. Refer to the <a href='https://github.com/dinarcon/drupal-migrations-intermediate/blob/main/TROUBLESHOOTING.md' title='Troubleshooting file'>TROUBLESHOOTING.md file</a> for details.</p>"
             format: basic_html
           plugin_id: text
       relationships: {  }

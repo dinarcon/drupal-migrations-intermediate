@@ -33,14 +33,14 @@ process:
   field_ud_review_name: src_review_name
   field_ud_review_comment: src_review_comment
 
-  psf_ud_evaluations:
+  pseudo_ud_evaluations:
     plugin: migration_lookup
     migration: ud_course_json_paragraph_evaluation
     source: src_review_id
     no_stub: true
   field_ud_review_evaluations:
     plugin: sub_process
-    source: ['@psf_ud_evaluations']
+    source: ['@pseudo_ud_evaluations']
     process:
       target_id: '0'
       target_revision_id: '1'
@@ -53,4 +53,4 @@ destination:
 migration_dependencies:
   required:
     - ud_course_json_paragraph_evaluation
-  optional: []
+  optional: { }

@@ -39,7 +39,7 @@ process:
     plugin: default_value
     default_value: 'en'
 
-  psf_nid:
+  pseudo_nid:
     plugin: migration_lookup
     migration: ud_course_json_node
     source: src_course_id
@@ -49,7 +49,7 @@ process:
     plugin: concat
     source:
       - constants/NODE_CANONICAL_PATH_PREFIX
-      - '@psf_nid'
+      - '@pseudo_nid'
 
   alias:
     plugin: concat
@@ -64,4 +64,4 @@ destination:
 migration_dependencies:
   required:
     - ud_course_json_node
-  optional: []
+  optional: { }

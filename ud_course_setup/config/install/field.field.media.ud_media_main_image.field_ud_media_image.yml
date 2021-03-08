@@ -21,7 +21,7 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: ud-course-files
+  file_directory: ud-migrations/intermediate
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''

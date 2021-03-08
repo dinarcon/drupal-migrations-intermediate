@@ -7,7 +7,7 @@ migration_tags:
 
 source:
   constants:
-    DRUPAL_UD_COURSE_FILES_DIRECTORY: 'public://ud-course-files'
+    DRUPAL_UD_COURSE_FILES_DIRECTORY: 'public://ud-migrations/intermediate'
     FILE_STATUS_PERMANENT: 1
 
   plugin: url
@@ -31,7 +31,7 @@ source:
       type: string
 
 process:
-  psf_destination_filename:
+  pseudo_destination_filename:
     - plugin: callback
       source: src_file_url
       callable: basename
@@ -39,18 +39,18 @@ process:
     - plugin: skip_on_empty
       method: row
       message: 'Cannot import missing file URL.'
-  psf_destination_full_path:
+  pseudo_destination_full_path:
     plugin: concat
     source:
       - constants/DRUPAL_UD_COURSE_FILES_DIRECTORY
-      - '@psf_destination_filename'
+      - '@pseudo_destination_filename'
     delimiter: /
 
   uri:
     plugin: download
     source:
       - src_file_url
-      - '@psf_destination_full_path'
+      - '@pseudo_destination_full_path'
     file_exists: 'rename'
 
   status: constants/FILE_STATUS_PERMANENT
@@ -59,4 +59,6 @@ destination:
   plugin: 'entity:file'
   validate: true
 
-migration_dependencies: null
+migration_dependencies:
+  required: { }
+  optional: { }

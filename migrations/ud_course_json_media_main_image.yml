@@ -52,4 +52,4 @@ destination:
 migration_dependencies:
   required:
     - ud_course_json_file_main_image
-  optional: []
+  optional: { }

@@ -8,14 +8,18 @@ This module is part of the [Understand Drupal Migrations Course](https://underst
 
 The following projects are required to run this demo. The numbers indicate which version of the project was last used for testing.
 
-* [Drupal](https://www.drupal.org/project/drupal) 9.0.6
-* [Drush](https://github.com/drush-ops/drush) 10.3.4
+* [Drupal](https://www.drupal.org/project/drupal) 9.1.5
 * [Migrate plus](https://www.drupal.org/project/migrate_plus) 8.x-5.1
 * [Migrate tools](https://www.drupal.org/project/migrate_tools) 8.x-5.0
 * [Paragraphs](https://www.drupal.org/project/paragraphs) 8.x-1.12
-* [Entity reference revisions](https://www.drupal.org/project/entity_reference_revisions) 8.x-1.8
-* [Metatag](https://www.drupal.org/project/metatag) 8.x-1.14
-* [Token](https://www.drupal.org/project/token) 8.x-1.7
+* [Entity reference revisions](https://www.drupal.org/project/entity_reference_revisions) 8.x-1.9
+* [Metatag](https://www.drupal.org/project/metatag) 8.x-1.15
+* [Token](https://www.drupal.org/project/token) 8.x-1.9
+* [Drush](https://github.com/drush-ops/drush) 10.3.6
+
+### Specific Drush version required
+
+Drush `10.4` and later is not compatible with `migrate_tools <= 5`. Until a `6.x` branch is released for `migrate_tools`, Drush needs to be pinned to `^10.3.0` via Composer.
 
 ## Examples
 
@@ -32,8 +36,8 @@ This demo includes eight migrations. All of them use a JSON file as the source.
 
 ## Instructions
 
-* Install module dependencies via Composer: `composer require 'drupal/migrate_plus:^5.1' 'drupal/migrate_tools:^5.0' 'drupal/paragraphs:^1.12' 'drupal/entity_reference_revisions:^1.8' 'drupal/metatag:^1.14' 'drupal/token:^1.7'`
-* Install the latest version of Drush via Composer: `composer require 'drush/drush'`. After this step, you may call it via `./vendor/bin/drush`.
+* Install module dependencies via Composer: `composer require 'drupal/migrate_plus:^5.1' 'drupal/migrate_tools:^5.0' 'drupal/paragraphs:^1.12' 'drupal/entity_reference_revisions:^1.9' 'drupal/metatag:^1.15' 'drupal/token:^1.9'`
+* Install the **Drush 10.3.x** via Composer: `composer require 'drush/drush:^10.3.0'`. After this step, you may call it via `./vendor/bin/drush`.
 * Make sure your Drupal installation has a `/modules/custom` folder. The `modules` folder should exist, but the `custom` sub-folder might not. Create it if needed.
 * Download the demo module contained in this repository into the `/modules/custom` folder. You can do this by cloning this repository or [downloading a ZIP file](https://github.com/dinarcon/drupal-migrations-intermediate/archive/main.zip). **Important:** In either case, you need to rename the folder to `ud_course`. Otherwise, the migrations will not find the JSON file used as source data.
 * Enable the *UD Course Example Migration* (`ud_course`) module.

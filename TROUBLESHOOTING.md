@@ -1,8 +1,10 @@
 # Troubleshooting
 
-## Drush command not defined
+## Drush command not defined or inability to install migrate_tools
 
-This module works with Drupal 8 and 9. All the examples in this demo module assume Drush 10 is used. If you are using another version, the commands and their aliases might be different. Execute `./vendor/bin/drush list --filter=migrate` to verify the available commands for your version of Drush.
+This module works with Drupal 8 and 9. All the examples in this demo module assume Drush **10.3.x** is used. If you are using another version, the commands and their aliases might be different. Execute `./vendor/bin/drush list --filter=migrate` to verify the available commands for your version of Drush.
+
+**Important:** Drush 10.4+ is not compatible with `migrate_tools` <= 5. Until a 6.x branch is release for `migrate_plus`, Drush needs to be pinned to `^10.3.0` via Composer.
 
 If you are using Drush 10, make sure the [Migrate tools](https://www.drupal.org/project/migrate_tools) is **enabled** on the site. This module provides the commands for executing migrations from the command line.
 
@@ -10,7 +12,7 @@ If you are using Drush 10, make sure the [Migrate tools](https://www.drupal.org/
 
 Read more about this at the [Composer documentation](https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors). One of the proposed solution is prepending the command with `COMPOSER_MEMORY_LIMIT=-1`. For example:
 
-`COMPOSER_MEMORY_LIMIT=-1 composer create-project drupal/recommended-project:^9.0.0 migrations-intermediate`
+`COMPOSER_MEMORY_LIMIT=-1 composer create-project drupal/recommended-project:^9.1 migrations-intermediate`
 
 ## Fetching example data from a local JSON file
 

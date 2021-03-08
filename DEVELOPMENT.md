@@ -10,39 +10,41 @@ These instructions also use the [recommended-project composer template](https://
 
 * PHP 7.3. Check with this command: `php --version`
 * SQLite 3.26. Check with this command: `sqlite3 --version`
-* Drush 10 for running the migrations. Check with this command: `./vendor/bin/drush --version`
+* Drush **10.3.x** for running the migrations. Check with this command: `./vendor/bin/drush --version`
+
+Drush `10.4` and later is not compatible with `migrate_tools <= 5`. Until a `6.x` branch is released for `migrate_tools`, Drush needs to be pinned to `^10.3.0` via Composer.
 
 ```
 # Get Drupal 9 via composer.
-composer create-project drupal/recommended-project:^9.0.0 migrations-intermediate
+composer create-project drupal/recommended-project:^9.1 migrations-intermediate
 
 # If you get memory limit errors when running composer, prepend the command with
 # COMPOSER_MEMORY_LIMIT=-1
 # More information at https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors
-COMPOSER_MEMORY_LIMIT=-1 composer create-project drupal/recommended-project:^9.0.0 migrations-intermediate
+COMPOSER_MEMORY_LIMIT=-1 composer create-project drupal/recommended-project:^9.1 migrations-intermediate
 
 # Change directory.
 cd migrations-intermediate
 
-# Add Olivero. This is necessary for Drupal 9.1 onwards.
-composer require 'drupal/olivero:^1.0'
-
 # Add Drush.
-composer require 'drush/drush'
+composer require 'drush/drush:^10.3.0'
 
 # Add contrib modules.
-composer require 'drupal/migrate_plus:^5.1' 'drupal/migrate_tools:^5.0' 'drupal/paragraphs:^1.12' 'drupal/entity_reference_revisions:^1.8' 'drupal/metatag:^1.14' 'drupal/token:^1.7'
+composer require 'drupal/migrate_plus:^5.1' 'drupal/migrate_tools:^5.0' 'drupal/paragraphs:^1.12' 'drupal/entity_reference_revisions:^1.9' 'drupal/metatag:^1.15' 'drupal/token:^1.9'
 
 # At the time of publication, a patch is needed for migrate_tools module.
-# The following 3 commands are only needed until this issue is resolved:
+# The following 4 commands are only needed until this issue is resolved:
 # https://www.drupal.org/node/3117485
 
 # Add ability to patch modules.
-composer require 'cweagans/composer-patches'
+composer require 'cweagans/composer-patches:^1.7'
 
 # Edit composer.json file per instructions in patching migrate_tools module
 # section.
 vim composer.json
+
+# Validate composer.json file.
+composer validate
 
 # Apply the patch.
 composer install
@@ -67,14 +69,14 @@ cd web/modules/custom && wget https://github.com/dinarcon/drupal-migrations-inte
 # the same command again to restart the development server.
 php web/core/scripts/drupal quick-start standard --site-name "UnderstandDrupal.com/migrations" --suppress-login
 
-# Enable the modules.
-./vendor/bin/drush pm-enable --yes ud_course ud_course_setup migrate migrate_plus migrate_tools media media_library paragraphs entity_reference_revisions metatag metatag_open_graph metatag_twitter_cards token
-
-# Set Olivero as the default (frontend) theme.
-drush theme-enable olivero && drush --yes config:set olivero.settings debug 0 && drush --yes config:set system.theme default olivero
-
 # Set Claro as the admin theme.
-drush theme-enable claro && drush --yes config:set system.theme admin claro
+./vendor/bin/drush theme:enable claro && ./vendor/bin/drush --yes config:set system.theme admin claro
+
+# Set Olivero as the default (frontend) theme. If using Drupal 8.9, install it via Composer: composer require 'drupal/olivero:^1.0@beta'
+./vendor/bin/drush theme:enable olivero && ./vendor/bin/drush --yes config:set system.theme default olivero
+
+# Enable the modules.
+./vendor/bin/drush pm:enable --yes ud_course
 
 # Import content.
 ./vendor/bin/drush migrate:import --tag='UD Migrations Intermediate Example'
@@ -85,6 +87,8 @@ drush theme-enable claro && drush --yes config:set system.theme admin claro
 # Rollback content.
 ./vendor/bin/drush migrate:rollback --tag='UD Migrations Intermediate Example'
 
+# Uninstall example module. This removes the included configuration: content type, fields, paragraph types, media types, view, etc.
+./vendor/bin/drush pm:uninstall --yes ud_course ud_course_setup
 ```
 
 If you are using a different development environment, make sure to meet Drupal's [system requirements](https://www.drupal.org/docs/system-requirements).

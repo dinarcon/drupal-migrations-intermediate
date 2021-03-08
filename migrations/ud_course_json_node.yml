@@ -1,5 +1,5 @@
 id: ud_course_json_node
-label: 'Import media attachments from JSON'
+label: 'Import nodes from JSON'
 
 migration_tags:
   - UD JSON Source
@@ -127,4 +127,4 @@ migration_dependencies:
     - ud_course_json_media_attachment
     - ud_course_json_media_main_image
     - ud_course_json_paragraph_review
-  optional: []
+  optional: { }

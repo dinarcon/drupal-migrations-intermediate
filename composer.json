@@ -17,7 +17,7 @@
   },
   "require": {
     "drupal/core": "^8 | ^9",
-    "drupal/metatag": "^1.14",
+    "drupal/metatag": "^1.15",
     "drupal/migrate_plus": "^5.1",
     "drupal/migrate_tools": "^5.0",
     "drupal/paragraphs": "^1.12"
@@ -25,7 +25,7 @@
   "suggest": {
     "drupal/devel": "Get a list of available container services with devel-services command.",
     "drupal/pathauto": "Provide patterns for path aliases.",
-    "drush/drush": "Execute commands provided by migrate_tools."
+    "drush/drush": "Drush 10.3.x required. Execute commands provided by migrate_tools <=5."
   },
   "minimum-stability": "dev"
 }
